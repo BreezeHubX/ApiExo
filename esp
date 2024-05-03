@@ -1,0 +1,127 @@
+_G.Active = true
+_G.Outline = true
+_G.Chams = true
+_G.Health = true
+_G.Names = true
+function GetHealth()
+	for _,v in pairs(game:GetService("Players"):GetPlayers()) do
+		if v.Character and v.Character:FindFirstChild("Head") and v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard") and v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("HealthInfo") and v.Character:FindFirstChild("Humanoid") then
+			v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("HealthInfo").Text = math.ceil(v.Character:FindFirstChild("Humanoid").Health)
+		else
+			
+		end
+	end	
+end
+function Done(plr)
+	if plr ~= game:GetService("Players").LocalPlayer then
+		if plr and plr.Character and plr.Character:FindFirstChild("Head") then
+			if plr.Character:FindFirstChild("Box") == nil  then
+				Headstring = Instance.new("BillboardGui", plr.Character:FindFirstChild("Head"))
+				Headstring.AlwaysOnTop = true
+				Headstring.StudsOffset = Headstring.StudsOffset + Vector3.new(0,2.5,0)
+				Headstring.Size = UDim2.new(0, 200, 0, 50)
+				Headstring.Active = true
+				Headstring.Name = "BillBoard"
+				Esp = Instance.new("TextLabel", Headstring)
+				Esp.Active = true
+				Esp.Text = plr.Name
+				Esp.BackgroundTransparency = 1
+				Esp.TextColor3 = Color3.fromRGB(255, 255, 255)
+				Esp.TextSize = 16
+				Esp.TextStrokeTransparency = 0
+				Esp.TextTransparency = 0
+				Esp.Size = UDim2.new(0, 200, 0, 50)
+				Esp.Font = Enum.Font.SourceSansSemibold
+				Esp.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+				Esp.Name = "PlayerName"
+				Health = Instance.new("TextLabel", Headstring)
+				Health.Name = "HealthInfo"
+				Health.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Health.BackgroundTransparency = 1.000
+				Health.BorderColor3 = Color3.fromRGB(0, 0, 0)
+				Health.BorderSizePixel = 0
+				Health.Size = UDim2.new(0, 200, 0, 50)
+				Health.Font = Enum.Font.SourceSansSemibold
+				Health.TextColor3 = Color3.fromRGB(255, 255, 255)
+				Health.TextSize = 18.000
+				Health.TextStrokeTransparency = 0.000
+				Health.TextYAlignment = Enum.TextYAlignment.Bottom
+				high = Instance.new("Highlight", plr.Character)
+				high.FillColor = Color3.fromRGB(195, 195, 195)
+				high.OutlineColor = Color3.fromHSV(0, 0, 1)
+				high.FillTransparency = 0.4
+				high.Name = "Box"
+			end
+		end
+	end
+end
+function GetPlayers()
+	for _,v in pairs(game:GetService("Players"):GetPlayers()) do
+		Done(v)
+		if _G.Active == false then
+			if v ~= game:GetService("Players").LocalPlayer and v.Character and v.Character:FindFirstChild("Box") ~= nil and v.Character:FindFirstChild("Head") then
+				v.Character:FindFirstChild("Box").Enabled = false
+				v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard").Enabled = false
+			end
+		elseif _G.Active == true then
+			if v ~= game:GetService("Players").LocalPlayer and v.Character and v.Character:FindFirstChild("Box") ~= nil and v.Character:FindFirstChild("Head") then
+				v.Character:FindFirstChild("Box").Enabled = true
+				v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard").Enabled = true
+			end
+		end
+		if _G.Chams == false then
+			if v ~= game:GetService("Players").LocalPlayer and v.Character and v.Character:FindFirstChild("Box") then
+				v.Character:FindFirstChild("Box").FillTransparency = 1 
+			end
+		elseif _G.Chams == true then
+			if v ~= game:GetService("Players").LocalPlayer and v.Character and v.Character:FindFirstChild("Box") then
+				v.Character:FindFirstChild("Box").FillTransparency = .5 
+			end
+		end
+		if _G.Outline == false then
+			if v ~= game:GetService("Players").LocalPlayer and v.Character and v.Character:FindFirstChild("Box") then
+				v.Character:FindFirstChild("Box").OutlineTransparency = 1 
+			end
+		elseif _G.Outline == true then
+			if v ~= game:GetService("Players").LocalPlayer and v.Character and v.Character:FindFirstChild("Box") then
+				v.Character:FindFirstChild("Box").OutlineTransparency = 0 
+			end
+		end
+		if _G.Health == false then
+			if v ~= game:GetService("Players").LocalPlayer and v.Character and v.Character:FindFirstChild("Box") ~= nil and v.Character:FindFirstChild("Head") then
+				v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("HealthInfo").Visible = false
+			end
+		elseif _G.Health == true then
+			if v ~= game:GetService("Players").LocalPlayer and v.Character and v.Character:FindFirstChild("Box") ~= nil and v.Character:FindFirstChild("Head") then
+				v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("HealthInfo").Visible = true
+			end
+		end
+		if _G.Names == false then
+			if v ~= game:GetService("Players").LocalPlayer and v.Character and v.Character:FindFirstChild("Box") ~= nil and v.Character:FindFirstChild("Head") then
+				v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName").Visible = false
+			end
+		elseif _G.Names == true then
+			if v ~= game:GetService("Players").LocalPlayer and v.Character and v.Character:FindFirstChild("Box") ~= nil and v.Character:FindFirstChild("Head") then
+				v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName").Visible = true
+			end
+		end
+	end
+end
+function Loop()
+	while task.wait(.25) do
+		GetPlayers()
+		GetHealth()
+	end
+end
+function Start()
+	GetPlayers()
+	Loop()
+end
+function GameLoaded()
+	repeat
+		task.wait(.1)
+	until
+	game.Loaded or game:IsLoaded()
+	Start()
+end
+GameLoaded()
