@@ -147,6 +147,7 @@ function Loop()
 		GetHealth()
 		if mm2() == "yes" then
 			ReturnRole()
+			print("mm2")
 		elseif mm2() == "no" then
 			print("NotMM2")
 		end
