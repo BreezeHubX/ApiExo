@@ -4,7 +4,7 @@ _G.Chams = true
 _G.Health = true
 _G.Names = true
 function GetRole(plr)
-	if plr.Character and plr.Character:FindFirstChild("Backpack") then
+	if plr.Character and plr:FindFirstChild("Backpack") then
 		if plr.Character:FindFirstChild("Knife") or plr.Backpack:FindFirstChild("Knife") then
 			return "Murder"
 		elseif plr.Character:FindFirstChild("Gun") or plr.Backpack:FindFirstChild("Gun") then
@@ -136,14 +136,14 @@ function GetPlayersAndSettings()
 end
 function mm2()
 	if game.GameId == 142823291 then
-		return true
+		return "yes"
 	end
 end
 function Loop()
 	while task.wait(.25) do
 		GetPlayersAndSettings()
 		GetHealth()
-		if mm2() == true then
+		if mm2() == "yes" then
 			ReturnRole()
 		end
 	end
