@@ -137,6 +137,8 @@ end
 function mm2()
 	if game.GameId == 142823291 then
 		return "yes"
+	else
+		return "no"
 	end
 end
 function Loop()
@@ -145,6 +147,8 @@ function Loop()
 		GetHealth()
 		if mm2() == "yes" then
 			ReturnRole()
+		elseif mm2() == "no" then
+			print("NotMM2")
 		end
 	end
 end
