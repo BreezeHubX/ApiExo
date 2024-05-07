@@ -3,10 +3,37 @@ _G.Outline = true
 _G.Chams = true
 _G.Health = true
 _G.Names = true
+function mm2RolesSet() 
+	for _,v in pairs(game:GetService("Players"):GetPlayers()) do
+		if v and v.Backpack then
+			if  v.Backpack:findFirstChild("Knife") or v.Character:findFirstChild("Knife") then
+				if v.Character and v.Character:FindFirstChild("Head") and v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard") and v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName") and v.Character:FindFirstChild("Box") then
+					v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName").TextColor3 = Color3.fromRGB(180, 0, 0)
+					v.Character:FindFirstChild("Box").FillColor = Color3.fromRGB(180, 0, 0)
+				end
+			if  v.Backpack:findFirstChild("Gun") or v.Character:findFirstChild("Gun") then
+				if v.Character and v.Character:FindFirstChild("Head") and v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard") and v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName") and v.Character:FindFirstChild("Box") then
+					v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName").TextColor3 = Color3.fromRGB(0, 0, 180)
+					v.Character:FindFirstChild("Box").FillColor = Color3.fromRGB(0, 0, 180)
+				end
+			else
+				if v.Character and v.Character:FindFirstChild("Head") and v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard") and v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName") and v.Character:FindFirstChild("Box") then
+					v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName").TextColor3 = Color3.fromRGB(0, 220, 0)
+					v.Character:FindFirstChild("Box").FillColor = Color3.fromRGB(0, 220, 0)
+				end
+			end
+		end
+	end
+	end
+end
+
+function mm2RolesSetByRemoteEvent()
+	return false
+end
 function GetHealth()
 	for _,v in pairs(game:GetService("Players"):GetPlayers()) do
 		if v.Character and v.Character:FindFirstChild("Head") and v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard") and v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("HealthInfo") and v.Character:FindFirstChild("Humanoid") then
-			v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("HealthInfo").Text = math.ceil(v.Character:FindFirstChild("Humanoid").Health)
+			v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("HealthInfo").Text = "{ "..math.ceil(v.Character:FindFirstChild("Humanoid").Health).." }"
 		else
 			
 		end
@@ -55,7 +82,7 @@ function Done(plr)
 		end
 	end
 end
-function GetPlayers()
+function GetPlayersAndSettings()
 	for _,v in pairs(game:GetService("Players"):GetPlayers()) do
 		Done(v)
 		if _G.Active == false then
@@ -107,14 +134,21 @@ function GetPlayers()
 		end
 	end
 end
+function mm2()
+	if game.GameId == 142823291 then
+		return true
+	end
+end
 function Loop()
 	while task.wait(.25) do
-		GetPlayers()
+		GetPlayersAndSettings()
 		GetHealth()
+		if mm2() == true then
+			mm2RolesSet()
+		end
 	end
 end
 function Start()
-	GetPlayers()
 	Loop()
 end
 function GameLoaded()
