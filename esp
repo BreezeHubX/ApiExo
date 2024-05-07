@@ -6,12 +6,12 @@ _G.Names = true
 function mm2RolesSet() 
 	for _,v in pairs(game:GetService("Players"):GetPlayers()) do
 		if v and v.Backpack then
-			if  v.Backpack:findFirstChild("Knife") or v.Character:findFirstChild("Knife") then
+			if  v.Backpack:FindFirstChild("Knife") or v.Character:FindFirstChild("Knife") then
 				if v.Character and v.Character:FindFirstChild("Head") and v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard") and v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName") and v.Character:FindFirstChild("Box") then
 					v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName").TextColor3 = Color3.fromRGB(180, 0, 0)
 					v.Character:FindFirstChild("Box").FillColor = Color3.fromRGB(180, 0, 0)
 				end
-			elseif  v.Backpack:findFirstChild("Gun") or v.Character:findFirstChild("Gun") then
+			elseif  v.Backpack:FindFirstChild("Gun") or v.Character:FindFirstChild("Gun") then
 				if v.Character and v.Character:FindFirstChild("Head") and v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard") and v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName") and v.Character:FindFirstChild("Box") then
 					v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName").TextColor3 = Color3.fromRGB(0, 0, 180)
 					v.Character:FindFirstChild("Box").FillColor = Color3.fromRGB(0, 0, 180)
