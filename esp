@@ -11,7 +11,7 @@ function mm2RolesSet()
 					v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName").TextColor3 = Color3.fromRGB(180, 0, 0)
 					v.Character:FindFirstChild("Box").FillColor = Color3.fromRGB(180, 0, 0)
 				end
-			if  v.Backpack:findFirstChild("Gun") or v.Character:findFirstChild("Gun") then
+			elseif  v.Backpack:findFirstChild("Gun") or v.Character:findFirstChild("Gun") then
 				if v.Character and v.Character:FindFirstChild("Head") and v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard") and v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName") and v.Character:FindFirstChild("Box") then
 					v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName").TextColor3 = Color3.fromRGB(0, 0, 180)
 					v.Character:FindFirstChild("Box").FillColor = Color3.fromRGB(0, 0, 180)
@@ -23,7 +23,6 @@ function mm2RolesSet()
 				end
 			end
 		end
-	end
 	end
 end
 
