@@ -135,7 +135,7 @@ function GetPlayersAndSettings()
 	end
 end
 function mm2()
-	if game.GameId == 142823291 then
+	if game.PlaceId == 142823291 then
 		return "yes"
 	else
 		return "no"
