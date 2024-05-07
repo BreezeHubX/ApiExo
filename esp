@@ -4,7 +4,7 @@ _G.Chams = true
 _G.Health = true
 _G.Names = true
 function GetRole(plr)
-	if plr.Character and plr:FindFirstChild("Backpack") then
+	if plr.Character and plr.Backpack then
 		if plr.Character:FindFirstChild("Knife") or plr.Backpack:FindFirstChild("Knife") then
 			return "Murder"
 		elseif plr.Character:FindFirstChild("Gun") or plr.Backpack:FindFirstChild("Gun") then
