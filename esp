@@ -25,10 +25,6 @@ function mm2RolesSet()
 		end
 	end
 end
-
-function mm2RolesSetByRemoteEvent()
-	return false
-end
 function GetHealth()
 	for _,v in pairs(game:GetService("Players"):GetPlayers()) do
 		if v.Character and v.Character:FindFirstChild("Head") and v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard") and v.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("HealthInfo") and v.Character:FindFirstChild("Humanoid") then
@@ -133,12 +129,18 @@ function GetPlayersAndSettings()
 		end
 	end
 end
-
+function mm2()
+	if game.GameId == 142823291 then
+		return true
+	end
+end
 function Loop()
 	while task.wait(.25) do
 		GetPlayersAndSettings()
 		GetHealth()
-		mm2RolesSet()
+		if mm2() == true then
+			mm2RolesSet()
+		end
 	end
 end
 function Start()
