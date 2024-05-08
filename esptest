@@ -144,28 +144,16 @@ function GetPlayersAndSettings()
 		end
 	end
 end
-function mm2()
-	if game.PlaceId == 142823291 then
-		return true
-	else 
-		return false
-	end
-end
-function IsJailbreak()
-    if game.PlaceId == 606849621 then
-        return true
-    end
-end
 
 function Loop()
 	while task.wait(.25) do
 		GetPlayersAndSettings()
 		GetHealth()
-		if mm2() == true then
+		if game.PlaceId == 142823291 then
 			ReturnRole()
 			print("yes")
 		end
-		if IsJailbreak() == true then
+		if game.PlaceId == 606849621 then
 		    GetTeams()
 		end
 	end
