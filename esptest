@@ -32,7 +32,7 @@ function ReturnRole()
 end
 function GetTeams()
     for _,plr in pairs(game:GetService("Players"):GetPlayers()) do
-        if plr and plr.Team and plr.TeamColor then
+        if plr then
             if plr.Character and plr.Character:FindFirstChild("Head") and plr.Character:FindFirstChild("Head"):FindFirstChild("BillBoard") and plr.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("Playername") and plr.Character:FindFirstChild("Box") then
                 plr.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName").TextColor3 = plr.TeamColor
                 plr.Character:FindFirstChild("Box").FillColor = plr.TeamColor
@@ -160,14 +160,14 @@ function Loopjb()
 	end
 end
 function Start()
-	if game.PlaceId == 606849621 or game.PlaceId == '606849621' then
-		print("JB")
+	if game.PlaceId == 606849621 or '606849621' then
 		Loopjb()
-	elseif game.PlaceId == 142823291 or game.PlaceId == '142823291' then
-		print("mm2")
+		print("JB")
+	elseif game.PlaceId == 142823291 or '142823291' then
 		Loopmm2()
+		print("mm2")
 	else
-		print("unknown ID")
+		print("unkown ID")
 	end
 end
 function GameLoaded()
