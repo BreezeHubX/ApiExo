@@ -160,9 +160,9 @@ function Loopjb()
 	end
 end
 function Start()
-	if game.GameId == 606849621 then
+	if game.GameId == '606849621' then
 		Loopjb()
-	elseif game.GameId == 142823291 then
+	elseif game.GameId == '142823291' then
 		Loopmm2()
 	end
 end
