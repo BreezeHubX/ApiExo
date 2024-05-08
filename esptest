@@ -161,11 +161,11 @@ function Loopjb()
 end
 function Start()
 	if game.PlaceId == 606849621 or game.PlaceId == '606849621' then
-		Loopjb()
 		print("JB")
+		Loopjb()
 	elseif game.PlaceId == 142823291 or game.PlaceId == '142823291' then
+	print("mm2")
 		Loopmm2()
-		print("mm2")
 	else
 		print("unknown ID")
 	end
