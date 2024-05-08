@@ -145,14 +145,14 @@ function GetPlayersAndSettings()
 	end
 end
 function mm2()
-	if game.PlaceId == 142823291 or '142823291' then
+	if game.PlaceId == 142823291 then
 		return true
 	else 
 		return false
 	end
 end
 function IsJailbreak()
-    if game.PlaceId == 606849621 or '606849621' then
+    if game.PlaceId == 606849621 then
         return true
     end
 end
