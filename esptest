@@ -149,11 +149,11 @@ function Loop()
 	while task.wait(.25) do
 		GetPlayersAndSettings()
 		GetHealth()
-		if game.PlaceId == 142823291 or '142823291' then
+		if game.PlaceId == 142823291 then
 			ReturnRole()
 			print(game.PlaceId)
 		end
-		if game.PlaceId == 606849621 or '606849621' then
+		if game.PlaceId == 606849621 then
 		    GetTeams()
 			print(game.PlaceId)
 		end
