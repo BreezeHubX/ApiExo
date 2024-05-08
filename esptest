@@ -175,7 +175,7 @@ function GameLoaded()
 		task.wait(.1)
 	until
 	game.Loaded or game:IsLoaded()
-	Start()
 	print("Started")
+	Start()
 end
 GameLoaded()
