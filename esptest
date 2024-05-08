@@ -164,6 +164,8 @@ function Start()
 		Loopjb()
 	elseif game.GameId == '142823291' then
 		Loopmm2()
+	else
+		print("unkown ID")
 	end
 end
 function GameLoaded()
