@@ -145,22 +145,26 @@ function GetPlayersAndSettings()
 	end
 end
 
-function Loop()
+function Loopmm2()
 	while task.wait(.25) do
 		GetPlayersAndSettings()
 		GetHealth()
-		if game.PlaceId == 142823291 then
-			ReturnRole()
-			print(game.PlaceId)
-		end
-		if game.PlaceId == 606849621 then
-		    GetTeams()
-			print(game.PlaceId)
-		end
+		ReturnRole()
+	end
+end
+function Loopjb()
+	while task.wait(.25) do
+		GetPlayersAndSettings()
+		GetHealth()
+		GetTeams()
 	end
 end
 function Start()
-	Loop()
+	if game.PlaceId == 606849621 then
+		Loopjb()
+	elseif game.PlaceId == 142823291 then
+		Loopmm2()
+	end
 end
 function GameLoaded()
 	repeat
