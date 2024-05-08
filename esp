@@ -136,14 +136,14 @@ function GetPlayersAndSettings()
 end
 function mm2()
 	if game.PlaceId == '142823291' then
-		return true
+		return "yes"
 	end
 end
 function Loop()
 	while task.wait(.25) do
 		GetPlayersAndSettings()
 		GetHealth()
-		if mm2() == true then
+		if mm2() == "yes" then
 			ReturnRole()
 			print("yes")
 		else
