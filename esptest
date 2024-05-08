@@ -162,8 +162,10 @@ end
 function Start()
 	if game.JobId == 606849621 then
 		Loopjb()
+		print("JB")
 	elseif game.JobId == 142823291 then
 		Loopmm2()
+		print("mm2")
 	else
 		print("unkown ID")
 	end
