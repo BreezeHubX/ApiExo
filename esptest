@@ -31,13 +31,11 @@ function ReturnRole()
 	end
 end
 function GetTeams()
-    for _,plr in pairs(game:GetService("Players"):GetPlayers()) do
-        if plr then
-			print("Getting teams")
-            if plr.Character and plr.Character:FindFirstChild("Head") and plr.Character:FindFirstChild("Head"):FindFirstChild("BillBoard") and plr.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("Playername") and plr.Character:FindFirstChild("Box") then
-                plr.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName").TextColor3 = plr.TeamColor
-                plr.Character:FindFirstChild("Box").FillColor = plr.TeamColor
-            end
+    for _,plr in pairs(game:GetService("Players"):GetPlayers()) do  
+		print("Getting teams")
+        if plr.Character and plr.Character:FindFirstChild("Head") and plr.Character:FindFirstChild("Head"):FindFirstChild("BillBoard") and plr.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("Playername") and plr.Character:FindFirstChild("Box") then
+            plr.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName").TextColor3 = plr.TeamColor
+            plr.Character:FindFirstChild("Box").FillColor = plr.Team.TeamColor
         end
     end
 end
