@@ -144,6 +144,7 @@ function Loop()
 		GetPlayersAndSettings()
 		GetHealth()
 		if mm2() == "yes" then
+			print("yes")
 			ReturnRole()
 		end
 	end
