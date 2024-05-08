@@ -137,6 +137,8 @@ end
 function mm2()
 	if game.PlaceId == '142823291' then
 		return "yes"
+	else 
+		return "no"
 	end
 end
 function Loop()
@@ -146,7 +148,7 @@ function Loop()
 		if mm2() == "yes" then
 			ReturnRole()
 			print("yes")
-		else
+		elseif mm2() == "no" then
 			print("no")
 		end
 	end
