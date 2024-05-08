@@ -151,10 +151,11 @@ function Loop()
 		GetHealth()
 		if game.PlaceId == 142823291 then
 			ReturnRole()
-			print("yes")
+			print("mm2")
 		end
 		if game.PlaceId == 606849621 then
 		    GetTeams()
+			print("Jailbreak")
 		end
 	end
 end
