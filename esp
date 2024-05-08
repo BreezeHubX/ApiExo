@@ -145,12 +145,10 @@ function Loop()
 	while task.wait(.25) do
 		GetPlayersAndSettings()
 		GetHealth()
-		print(game.PlaceId)
 		if mm2() == "yes" then
 			ReturnRole()
-			print("mm2")
 		elseif mm2() == "no" then
-			print("NotMM2")
+			
 		end
 	end
 end
