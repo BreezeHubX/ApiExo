@@ -161,11 +161,9 @@ function Loop()
 	while task.wait(.25) do
 		GetPlayersAndSettings()
 		GetHealth()
-		if mm2() == "yes" then
+		if mm2() == true then
 			ReturnRole()
 			print("yes")
-		elseif mm2() == "no" then
-			print("no")
 		end
 		if IsJailbreak() == true then
 		    GetTeams()
