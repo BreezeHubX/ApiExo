@@ -160,10 +160,10 @@ function Loopjb()
 	end
 end
 function Start()
-	if game.CreatorId == 3059674 then
+	if game.PlaceId == 606849621 then
 		Loopjb()
 		print("JB")
-	elseif game.CreatorId == 1848960 then
+	elseif game.PlaceId == 142823291 then
 		Loopmm2()
 		print("mm2")
 	else
