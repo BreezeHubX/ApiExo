@@ -34,7 +34,7 @@ function GetTeams()
     for _,plr in pairs(game:GetService("Players"):GetPlayers()) do  
 		print("Getting teams")
 		if plr.Character and plr.Character:FindFirstChild("Head") and plr.Character:FindFirstChild("Head"):FindFirstChild("BillBoard") and plr.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName") then
-			plr.Character:FindFirstChild("Box").FillColor = plr.Team.TeamColor
+			plr.Character:FindFirstChild("Box").FillColor = plr.TeamColor.Color
 			plr.Character:FindFirstChild("Head"):FindFirstChild("BillBoard"):FindFirstChild("PlayerName").TextColor3 = plr.Character:FindFirstChild("Box").FillColor
 		end
     end
