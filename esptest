@@ -16,6 +16,7 @@ function GetRole(plr)
 end
 function ReturnRole() 
 	for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+		task.wait(.1)
 		if v.Character and v.Character:FindFirstChild("Box") then
 			if GetRole(v) == "Murder" then
 				v.Character:FindFirstChild("Box").FillColor = Color3.fromRGB(191, 0, 3)
