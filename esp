@@ -146,6 +146,8 @@ function Loop()
 		if mm2() == true then
 			ReturnRole()
 			print("yes")
+		else
+			print("no")
 		end
 	end
 end
